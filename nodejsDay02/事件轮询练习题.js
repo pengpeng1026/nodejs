@@ -14,3 +14,6 @@ Promise.resolve().then(function () {
       });
   })
 });
+setTimeout(()=>{
+  console.log(111);
+},2000)
