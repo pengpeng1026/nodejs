@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "ora": "^5.4.0"
   }
 }
