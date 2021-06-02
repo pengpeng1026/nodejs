@@ -14,6 +14,15 @@ Promise.resolve().then(function () {
       });
   })
 });
-setTimeout(()=>{
+
+const ora = require('ora');
+
+const spinner = ora('Loading unicorns').start();
+
+setTimeout(() => {
+	spinner.color = 'yellow';
+	spinner.text = 'Loading rainbows';
+}, 1000);
+setInterval(() => {
   console.log(111);
-},2000)
+}, 1000);
