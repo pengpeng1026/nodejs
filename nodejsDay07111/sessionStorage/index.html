@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    临时的储存，不存在跨页面，页面关闭后就消失
+    使用方法和localStorage相似
+   -->
+   <button id="btn">enheng</button>
+   <script>
+     const btn = document.querySelector('#btn')
+     btn.onclick = function(){
+       const person = {
+         name:'wanger',
+         age:111
+       }
+       sessionStorage.setItem('heh',JSON.stringify(person))
+     }
+   </script>
+</body>
+</html>
