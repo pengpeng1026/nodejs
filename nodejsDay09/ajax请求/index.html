@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+
+<body>
+  <button id="btn">ding</button>
+  <script>
+    $('#btn').click(function () {
+      $.ajax({
+        url: '/login',
+        cache: false,
+        data: 'user=laowang&pass=122',
+        /* data:{
+          user:'laowang',
+          pass:'122'
+        }, */
+        dataType: 'json',
+        headers: { //设置请求头
+          "Cache-Control": "max-age=0"
+        },
+        success(data) {
+          console.log(data);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

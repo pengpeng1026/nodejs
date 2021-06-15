@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="#" id="form">
+    user: <input type="text" name="user" id="user">
+    <br>
+    pass: <input type="password" name="pass" id="pass">
+    <br>
+    <button id="btn">提交</button>
+  </form>
+  <script>
+    const oform = document.querySelector('#form')
+    oform.onsubmit = function(e){
+      // 第一步，实例化一个XMLHttpRequest对象
+      const xhr = new XMLHttpRequest()
+      // 第二步，open方法，参数（1，请求方式 2，请求路径 3，是否异步，默认为true）
+      xhr.open('get','/login',true)
+      // 第三步.发送请求 send方法
+      xhr.send();
+      //第四步.xhr有一个onreadystatechange事件可以接受请求过程中readystate码的改变
+      xhr.onreadystatechange = function(){
+
+        if(xhr.readyState === 4 && xhr.status === 200){
+          //有两个属性接收到响应
+            //xhr.responseText:接受文本数据 json 字符串等
+            //xhr.responseXML:接受XML的数据
+            console.log(JSON.parse(xhr.responseText))
+            // console.log(xhr.responseText);
+        }
+      }
+
+      // 当点击按钮的时候浏览器会默认提交并转跳，会刷新页面，需要阻止这种默认行为
+      // e.preventDefault ? e.preventDefault : e.returnValue = false
+      return false
+    }
+  </script>
+</body>
+
+</html>

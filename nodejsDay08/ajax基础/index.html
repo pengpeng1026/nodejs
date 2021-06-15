@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="form">
+    user:
+    
+    <input type="text" name="user">
+    <br>
+    pass:
+    <input type="password" name="pwd">
+    <br>
+    <button>提交</button>
+  </form>
+  <script>
+    const oform = document.querySelector('#form')
+    oform.onsubmit = function(){
+      // 发生Ajax请求
+      // 1 实例化一个XMLHttpRequest对象
+      const xhr = new XMLHttpRequest()
+      // 2 调用open方法，参数（1，请求方式，2请求路径，3是否异步，默认时true）
+      xhr.open('get','/login',true)
+      // 3 发送请求 send方法
+      xhr.send()
+      // 4 xhr有一个onreadystatechange属性可以接收readyState码的改变，状态从0到4，4代表完成
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          // xhr接收响应的数据有两种方式
+          // xhr.responseText 接收文本或者字符串
+          // xhr.responseXML 接收xml数据，已淘汰
+          console.log(JSON.parse(xhr.responseText));
+        }
+      }
+      // 当点击按钮提交时，会自动转跳，阻止这种默认行为
+      return false
+    }
+  </script>
+</body>
+</html>
