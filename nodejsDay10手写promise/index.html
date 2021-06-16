@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./02.promise的then方法之异步.js"></script>
+</head>
+<body>
+  <script>
+    // promise参数是一个回调函数，默认实例化的时候就调用了，是同步代码
+    const p1 = new myPromise((resolve,reject) => {
+      setTimeout(() => {
+        // resolve('success')
+        // reject('fail')
+        resolve(111)
+      },2000)
+    })
+    console.log(p1);
+    // 其实在then中有两个参数，一个是处理成功的回调，一个是处理失败的回调
+    p1.then((data) => {
+      console.log(data);
+    },(reason) => {
+      console.log(reason);
+    })
+  </script>
+</body>
+</html>
