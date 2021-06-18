@@ -4,4 +4,4 @@ var _add = _interopRequireDefault(require("./add"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-(0, _add["default"])(44, 7);
+(0, _add["default"])(90, 22);

@@ -1,2 +1,2 @@
 import add from './add'
-add(44,7)
+add(90,22)

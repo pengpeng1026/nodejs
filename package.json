@@ -20,7 +20,9 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "ejs": "^3.1.6",
+    "etag": "^1.8.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "mongoose": "^5.12.13"
   },
